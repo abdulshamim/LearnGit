@@ -30,10 +30,14 @@ class ViewController: UIViewController {
         
         if textField.text?.isEmpty == true {
             self.textLabel.text = "Please Enter Your Name"
+            self.textLabel.backgroundColor = UIColor.red
+            self.textLabel.textColor = .white
             return
         }
         
         self.textLabel.text = "You are Welcome, " + textField.text!
+        self.textLabel.backgroundColor = .white
+        self.textLabel.textColor = .black
     }
     
 }
