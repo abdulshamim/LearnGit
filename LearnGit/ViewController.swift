@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.textField.layer.borderColor = UIColor.red.cgColor
+        self.textField.layer.borderWidth = 1
+
         self.textLabel.text = ""
     }
 
