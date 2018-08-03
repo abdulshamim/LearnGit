@@ -18,8 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.textField.layer.borderColor = UIColor.red.cgColor
         self.textField.layer.borderWidth = 1
-
         self.textLabel.text = ""
+        self.textField.delegate = self
     }
 
    
@@ -27,5 +27,18 @@ class ViewController: UIViewController {
         
     }
     
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(textField.text ?? "value is nil")
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == " " ||  string == "0" {
+            return false
+        }
+        return true
+    }
 }
 
